@@ -19,7 +19,6 @@ class TestLoginUser:
         login_data = {
             "email": user_data["email"],
             "password": user_data["password"]
-
         }
         login_response = requests.post(f"{Config.URL}api/auth/login", json=login_data)
         assert login_response.status_code == 200

@@ -30,9 +30,17 @@ def create_and_delete_user():
         "token": token
     }
     #Удаление пользователя после теста
-    #headers = {"Authorization": f"Bearer {token}"}
     headers = {"Authorization": token}
     delete_response = requests.delete(f"{Config.URL}api/auth/user", headers=headers)
     assert delete_response.status_code == 202, f"Ошибка удаления пользователя, статус: {delete_response.status_code}, текст: {delete_response.text}"
 
 
+@pytest.fixture
+def login_user(create_and_delete_user):
+    user_data = create_and_delete_user["user_data"]
+    login_data = {
+        "email": user_data["email"],
+        "password": user_data["password"]
+    }
+    login_response = requests.post(f"{Config.URL}api/auth/login", json=login_data)
+    assert login_response.status_code == 200
