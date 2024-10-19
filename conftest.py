@@ -3,6 +3,7 @@ from src.config import Config
 import json
 from src.helpers import get_random_data_user
 import pytest
+from src.data import get_ingredients
 
 
 @pytest.fixture
@@ -44,3 +45,13 @@ def login_user(create_and_delete_user):
     }
     login_response = requests.post(f"{Config.URL}api/auth/login", json=login_data)
     assert login_response.status_code == 200
+
+
+@pytest.fixture
+def create_order_with_ingredients(create_and_delete_user, login_user):
+    token = create_and_delete_user["token"]
+    headers = {"Authorization": token}
+    ingredients = {"ingredients": get_ingredients()[:2]}
+    create_order_response = requests.post(f"{Config.URL}api/orders", json=ingredients, headers=headers)
+    assert create_order_response.status_code == 200
+
