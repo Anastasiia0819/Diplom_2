@@ -1,15 +1,6 @@
-"""
-Изменение данных пользователя:
-- с авторизацией,
-- без авторизации,
-Для обеих ситуаций нужно проверить, что любое поле можно изменить.
-Для неавторизованного пользователя — ещё и то, что система вернёт ошибку.
-"""
-import pytest
 import requests
 import allure
 from src.config import Config
-import json
 from src.helpers import get_random_data_user
 from src.helpers import generate_random_name, generate_random_email, generate_random_password
 

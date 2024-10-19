@@ -1,13 +1,6 @@
-"""
-Логин пользователя:
-- логин под существующим пользователем,
-- логин с неверным логином и паролем.
-"""
-import pytest
 import requests
 import allure
 from src.config import Config
-import json
 from src.helpers import generate_random_email, generate_random_password
 
 

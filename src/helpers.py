@@ -31,3 +31,9 @@ def generate_random_name(length=6):
     return random_name
 
 
+def generate_random_ingredient(length=10):
+    letters = string.ascii_lowercase
+    random_ingredient = ''.join(random.choice(letters) for i in range(length))
+    return random_ingredient
+
+

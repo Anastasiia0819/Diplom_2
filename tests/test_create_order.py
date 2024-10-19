@@ -1,17 +1,7 @@
-"""
-Создание заказа:
-- с авторизацией,
-- без авторизации,
-- с ингредиентами,
-- без ингредиентов,
-- с неверным хешем ингредиентов.
-"""
 
-import pytest
 import requests
 import allure
 from src.config import Config
-import json
 from src.data import get_ingredients, list_invalid_ingredients
 
 

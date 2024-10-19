@@ -1,6 +1,7 @@
 import faker
 import requests
 from src.config import Config
+from src.helpers import generate_random_ingredient
 
 fake = faker.Faker('en_US')
 create_user_without_password = {
@@ -28,6 +29,6 @@ def get_ingredients():
     return ingredient_ids
 
 
-list_invalid_ingredients = [get_ingredients()[0], "a71d1f82001"]
+list_invalid_ingredients = [get_ingredients()[0], generate_random_ingredient()]
 
 

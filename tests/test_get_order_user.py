@@ -1,15 +1,6 @@
-"""
-Получение заказов конкретного пользователя:
-- авторизованный пользователь,
-- неавторизованный пользователь.
-"""
-
-import pytest
 import requests
 import allure
 from src.config import Config
-import json
-from src.data import get_ingredients
 
 
 class TestGetOrderUser:

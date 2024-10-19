@@ -1,16 +1,7 @@
-"""
-Создание пользователя:
-- создать уникального пользователя;
-- создать пользователя, который уже зарегистрирован;
-- создать пользователя и не заполнить одно из обязательных полей.
-"""
-
 import pytest
 import requests
 import allure
 from src.config import Config
-from src.helpers import get_random_data_user
-import json
 from src.data import create_user_without_email, create_user_without_name, create_user_without_password
 
 
