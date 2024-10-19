@@ -11,8 +11,21 @@ def get_random_data_user():
     return email, password, name
 
 
-def generate_random_string(length):
+def generate_random_password(length=6):
     letters = string.ascii_lowercase
-    random_string = ''.join(random.choice(letters) for i in range(length))
-    return random_string
+    random_password = ''.join(random.choice(letters) for i in range(length))
+    return random_password
+
+
+def generate_random_email():
+    domains = ["gmail.com", "yahoo.com", "outlook.com", "example.com"]
+    letters = string.ascii_lowercase
+    username = ''.join(random.choice(letters) for i in range(8))
+    domain = random.choice(domains)
+    return f"{username}@{domain}"
+
+
+password = generate_random_password()
+email = generate_random_email()
+
 

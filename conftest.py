@@ -30,7 +30,8 @@ def create_and_delete_user():
         "token": token
     }
     #Удаление пользователя после теста
-    headers = {"Authorization": f"Bearer {token}"}
+    #headers = {"Authorization": f"Bearer {token}"}
+    headers = {"Authorization": token}
     delete_response = requests.delete(f"{Config.URL}api/auth/user", headers=headers)
     assert delete_response.status_code == 202, f"Ошибка удаления пользователя, статус: {delete_response.status_code}, текст: {delete_response.text}"
 

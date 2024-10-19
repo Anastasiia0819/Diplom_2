@@ -16,3 +16,4 @@ create_user_without_name = {
         "password": fake.password(),
         "name": None
     }
+

@@ -11,7 +11,7 @@ import allure
 from src.config import Config
 from src.helpers import get_random_data_user
 import json
-from src.data import create_user_without_email,create_user_without_name, create_user_without_password
+from src.data import create_user_without_email, create_user_without_name, create_user_without_password
 
 
 class TestCreateUser:
