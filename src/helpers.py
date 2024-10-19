@@ -25,7 +25,9 @@ def generate_random_email():
     return f"{username}@{domain}"
 
 
-password = generate_random_password()
-email = generate_random_email()
+def generate_random_name(length=6):
+    letters = string.ascii_lowercase
+    random_name = ''.join(random.choice(letters) for i in range(length))
+    return random_name
 
 

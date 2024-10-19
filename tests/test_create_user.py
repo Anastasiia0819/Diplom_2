@@ -31,9 +31,6 @@ class TestCreateUser:
     @allure.description("Должен быть код ответа 403 Forbidden")
     def test_create_user_double_user_error(self, create_and_delete_user):
         user_data = create_and_delete_user["user_data"]
-        response_data = create_and_delete_user['response_data']
-        token = create_and_delete_user["token"]
-
         duplicate_response = requests.post(f"{Config.URL}api/auth/register", json=user_data)
         assert duplicate_response.status_code == 403
         duplicate_response_json = duplicate_response.json()
